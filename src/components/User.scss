@@ -1,0 +1,263 @@
+.User {
+    text-align: center;
+
+    .Intro {
+        text-transform: uppercase;
+        font-family: sans-serif;
+
+        .Logo {
+            width: 100px;
+            height: 150px;
+        }
+
+        p {
+            margin: 10px;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+    }
+
+    .status-wrap {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+
+        .test {
+            &:nth-child(1) {
+                .circle {
+                    background-color: #ff5252;
+                }
+            }
+
+            &:nth-child(2) {
+                .circle {
+                    background-color: #ffb03e;
+                }
+            }
+
+            &:nth-child(3) {
+                .circle {
+                    background-color: #33d99c;
+                }
+            }
+
+            p {
+                font-family: sans-serif;
+                font-size: 10px;
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+
+        .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 10px auto;
+        }
+    }
+
+    .AddressList {
+        text-align: left;
+
+        .Sorting {
+            
+            ul {
+                display: none;
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                margin: 25px;
+                border: none;
+                text-transform: uppercase;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                letter-spacing: 1px;
+                background-color: transparent;
+                
+                &:focus {
+                    outline: none;
+                }
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            .active {
+                display: block;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        ul li {
+            color: black;
+            margin: 25px;
+            border-radius: 10px;
+            position: relative;
+            padding: 10px; 
+            box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.25);
+
+            .delete {
+                position: absolute;
+                right: -20px;
+                font-weight: bold;
+                padding: 20px;
+                z-index: 9999;
+                top: -20px;
+            }
+
+            span {
+                position: absolute;
+                top: 0;
+                left: 10px;
+            }
+
+            p {
+                padding: 5px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+
+            .address {
+                font-size: 18px;
+            }
+        }
+
+        .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 10px auto;
+            position: absolute;
+            top: 50%;
+            right: 8%;
+            transform: translate(-50%, -90%);
+
+            &.red {
+                background-color:  #ff5252;
+                box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+                animation: pulse 2s infinite;
+            }
+
+            &.yellow {
+                background-color: #ffb03e;
+                box-shadow: 0 0 0 0 rgba(232, 192, 61, 0.7);
+                animation: pulse 2s infinite;
+            }
+
+            &.green {
+                background-color: #33d99c;
+            }
+        }
+    }
+
+    @keyframes pulse {to {box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);}}
+
+    .Popup {
+        display: none;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .5);
+
+        &__close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-family: sans-serif;
+            font-size: 20px;
+            font-weight: 100;
+        }
+
+        &__content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            background-color: white;
+            opacity: 1;
+            padding: 20px 0;
+        }
+
+        &__Title {
+            text-transform: uppercase;
+            font-family: sans-serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 0 auto 10px;  
+        }
+
+        &__Text {
+            font-family: sans-serif;
+            font-size: 12px;
+            width: 50%;
+            text-align: center;
+            margin: 0 auto 20px;
+        }
+
+        .inputs {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+
+            input, select {
+                width: 100%;
+                box-sizing: border-box;
+                border-radius: 30px;
+                margin-bottom: 20px;
+                border: 1px solid black;
+                padding: 5px 25px;
+                color: black;
+            }
+
+            select {
+                text-transform: uppercase;
+            }
+
+            ::placeholder {
+                color: black;
+                opacity: 1;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .addButton {
+        border: none;
+        border-radius: 30px;
+        background-color: #76a395;
+        padding: 10px 30px;
+        margin: 15px auto;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+    .active {
+        display: block;
+    }
+}
